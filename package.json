@@ -1,0 +1,26 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "learn graphql",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index",
+    "server": "nodemon server/index",
+    "clients": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run clients\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "vishwanath",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "concurrently": "^7.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "nodemon": "^2.0.16"
+  }
+}
